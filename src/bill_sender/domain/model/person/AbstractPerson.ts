@@ -1,4 +1,4 @@
-abstract class AbstractPerson {
+export default abstract class AbstractPerson {
   constructor(
     protected name: string,
     protected lastName: string,
