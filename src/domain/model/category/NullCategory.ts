@@ -1,0 +1,19 @@
+import AbstractCategory from "./AbstractCategory";
+
+export default class NullCategory extends AbstractCategory {
+  constructor() {
+    super("Name not found", "Description not found");
+  }
+
+  public isNull(): boolean {
+    return true;
+  }
+
+  public setName(name: string) {
+    return;
+  }
+
+  public setDescription(description: string) {
+    return;
+  }
+}
