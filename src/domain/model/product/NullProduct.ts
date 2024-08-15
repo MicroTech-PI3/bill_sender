@@ -1,8 +1,18 @@
+import NullCategory from "../category/NullCategory";
+import NullSupplier from "../supplier/NullSupplier";
+import Supplier from "../supplier/Supplier";
 import AbstractProduct from "./AbstractProduct";
 
 export default class NullProduct extends AbstractProduct {
   constructor() {
-    super("Name not found", 0, "Description not found", 0);
+    super(
+      "Name not found",
+      0,
+      "Description not found",
+      0,
+      new NullSupplier(),
+      new NullCategory()
+    );
   }
 
   public setName(name: string) {
@@ -18,6 +28,10 @@ export default class NullProduct extends AbstractProduct {
   }
 
   public setQuantity(quantity: number) {
+    return;
+  }
+
+  public setSupplier(supplier: Supplier) {
     return;
   }
 

@@ -1,9 +1,14 @@
+import Category from "../category/Category";
+import Supplier from "../supplier/Supplier";
+
 export default abstract class AbstractProduct {
   constructor(
     protected name: string,
     protected price: number,
     protected description: string,
-    protected quantity: number
+    protected quantity: number,
+    protected supplier: Supplier,
+    protected category: Category
   ) {}
 
   public getName() {
@@ -22,6 +27,14 @@ export default abstract class AbstractProduct {
     return this.quantity;
   }
 
+  public getSupplier() {
+    return this.supplier;
+  }
+
+  public getCategory() {
+    return this.category;
+  }
+
   public setName(name: string) {
     this.name = name;
   }
@@ -36,6 +49,14 @@ export default abstract class AbstractProduct {
 
   public setQuantity(quantity: number) {
     this.quantity = quantity;
+  }
+
+  public setSupplier(supplier: Supplier) {
+    this.supplier = supplier;
+  }
+
+  public setCategory(category: Category) {
+    this.category = category;
   }
 
   public abstract isNull(): boolean;
