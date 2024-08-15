@@ -1,7 +1,8 @@
 import AbstractPerson from "../person/AbstractPerson";
+import IEmployee from "./types/IEmployee";
 
-export default class Employee extends AbstractPerson {
-  private address: string;
+export default class Employee extends AbstractPerson implements IEmployee {
+  address: string;
 
   constructor(
     name: string,

@@ -1,7 +1,11 @@
 import NullAbstractPerson from "../person/NullAbstractPerson";
+import IEmployee from "./types/IEmployee";
 
-export default class NullEmployee extends NullAbstractPerson {
-  private address: string;
+export default class NullEmployee
+  extends NullAbstractPerson
+  implements IEmployee
+{
+  address: string;
 
   constructor() {
     super();
