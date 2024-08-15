@@ -4,7 +4,8 @@ import PurchaseItem from "../purchaseItem/PurchaseItem";
 export default abstract class AbstractCart {
   constructor(
     protected employee: Employee,
-    protected products: PurchaseItem[]
+    protected products: PurchaseItem[],
+    protected id: number
   ) {}
 
   public getEmployee() {
@@ -15,12 +16,20 @@ export default abstract class AbstractCart {
     return this.products;
   }
 
+  public getId() {
+    return this.id;
+  }
+
   public setEmployee(employee: Employee) {
     this.employee = employee;
   }
 
   public setProducts(products: PurchaseItem[]) {
     this.products = products;
+  }
+
+  public setId(id: number) {
+    this.id = id;
   }
 
   public abstract isNull(): boolean;

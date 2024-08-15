@@ -5,7 +5,7 @@ import AbstractCart from "./AbstractCart";
 
 export default class NullCart extends AbstractCart {
   constructor() {
-    super(new NullEmployee(), []);
+    super(new NullEmployee(), [], -1);
   }
 
   public isNull(): boolean {

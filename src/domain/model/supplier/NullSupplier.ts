@@ -11,6 +11,7 @@ export default class NullSupplier
   constructor() {
     super();
     this.city = "City not found";
+    this.brand = "Brand not found";
   }
 
   public getCity() {

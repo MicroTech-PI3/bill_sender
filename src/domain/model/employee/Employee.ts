@@ -9,9 +9,10 @@ export default class Employee extends AbstractPerson implements IEmployee {
     lastName: string,
     phoneNumber: number,
     email: string,
+    id: number,
     address: string
   ) {
-    super(name, lastName, phoneNumber, email);
+    super(name, lastName, phoneNumber, email, id);
     this.address = address;
   }
 

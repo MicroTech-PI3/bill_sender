@@ -8,7 +8,8 @@ export default abstract class AbstractProduct {
     protected description: string,
     protected quantity: number,
     protected supplier: Supplier,
-    protected category: Category
+    protected category: Category,
+    protected id: number
   ) {}
 
   public getName() {
@@ -35,6 +36,10 @@ export default abstract class AbstractProduct {
     return this.category;
   }
 
+  public getId() {
+    return this.id;
+  }
+
   public setName(name: string) {
     this.name = name;
   }
@@ -57,6 +62,10 @@ export default abstract class AbstractProduct {
 
   public setCategory(category: Category) {
     this.category = category;
+  }
+
+  public setId(id: number) {
+    this.id = id;
   }
 
   public abstract isNull(): boolean;

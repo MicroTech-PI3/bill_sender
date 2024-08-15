@@ -2,7 +2,7 @@ import AbstractPerson from "./AbstractPerson";
 
 export default abstract class NullAbstractPerson extends AbstractPerson {
   constructor() {
-    super("Name not found", "Last name not found", 0o0, "Email not found");
+    super("Name not found", "Last name not found", 0o0, "Email not found", -1);
   }
 
   public setName(name: string): void {
@@ -18,6 +18,10 @@ export default abstract class NullAbstractPerson extends AbstractPerson {
   }
 
   public setPhoneNumber(phoneNumber: number): void {
+    return;
+  }
+
+  public setId(id: number): void {
     return;
   }
 

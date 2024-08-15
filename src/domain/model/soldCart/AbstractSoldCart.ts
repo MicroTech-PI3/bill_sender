@@ -5,7 +5,8 @@ export default abstract class AbstractSoldCart {
   constructor(
     protected cart: Cart,
     protected time: Time,
-    protected date: Date
+    protected date: Date,
+    protected id: number
   ) {}
 
   public getCart() {
@@ -20,6 +21,10 @@ export default abstract class AbstractSoldCart {
     return this.date;
   }
 
+  public getId() {
+    return this.id;
+  }
+
   public setCart(cart: Cart) {
     this.cart = cart;
   }
@@ -30,6 +35,10 @@ export default abstract class AbstractSoldCart {
 
   public setDate(date: Date) {
     this.date = date;
+  }
+
+  public setId(id: number) {
+    this.id = id;
   }
 
   public abstract isNull(): boolean;

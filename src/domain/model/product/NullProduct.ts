@@ -11,7 +11,8 @@ export default class NullProduct extends AbstractProduct {
       "Description not found",
       0,
       new NullSupplier(),
-      new NullCategory()
+      new NullCategory(),
+      -1
     );
   }
 

@@ -3,7 +3,8 @@ export default abstract class AbstractPerson {
     protected name: string,
     protected lastName: string,
     protected phoneNumber: number,
-    protected email: string
+    protected email: string,
+    protected id: number
   ) {}
 
   public getName(): string {
@@ -22,6 +23,10 @@ export default abstract class AbstractPerson {
     return this.email;
   }
 
+  public getId(): number {
+    return this.id;
+  }
+
   public setName(name: string): void {
     this.name = name;
   }
@@ -36,6 +41,10 @@ export default abstract class AbstractPerson {
 
   public setEmail(email: string): void {
     this.email = email;
+  }
+
+  public setId(id: number) {
+    this.id = id;
   }
 
   public abstract isNull(): boolean;

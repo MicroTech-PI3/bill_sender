@@ -10,10 +10,11 @@ export default class Supplier extends AbstractPerson implements ISupplier {
     lastName: string,
     phoneNumber: number,
     email: string,
+    id: number,
     city: string,
     brand: string
   ) {
-    super(name, lastName, phoneNumber, email);
+    super(name, lastName, phoneNumber, email, id);
     this.city = city;
     this.brand = brand;
   }

@@ -2,7 +2,7 @@ import AbstractCategory from "./AbstractCategory";
 
 export default class NullCategory extends AbstractCategory {
   constructor() {
-    super("Name not found", "Description not found");
+    super("Name not found", "Description not found", -1);
   }
 
   public isNull(): boolean {
@@ -14,6 +14,10 @@ export default class NullCategory extends AbstractCategory {
   }
 
   public setDescription(description: string) {
+    return;
+  }
+
+  public setId(id: number) {
     return;
   }
 }
