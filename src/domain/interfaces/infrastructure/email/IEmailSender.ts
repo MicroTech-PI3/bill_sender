@@ -1,3 +1,7 @@
 export default interface IEmailSender {
-  sendEmail(soldCartId: number, message: string): Promise<boolean>;
+  sendEmail(
+    email: string,
+    pdfBase64: string,
+    message: string
+  ): Promise<boolean>;
 }

@@ -2,7 +2,6 @@ import { Client, LocalAuth } from "whatsapp-web.js";
 import qrcode from "qrcode-terminal";
 import ICreateChatId from "../../domain/interfaces/infrastructure/whatsapp/helper/ICreateChatId";
 import IMessageBill from "../../domain/interfaces/infrastructure/whatsapp/helper/IMessageBill";
-import SoldCart from "../../domain/model/soldCart/SoldCart";
 
 export default class WhatsApp {
   private client: Client;
@@ -29,12 +28,14 @@ export default class WhatsApp {
     this.client.initialize();
   }
 
-  async sendMessage(soldCart: SoldCart, message: string): Promise<void> {
+  async sendMessage(
+    pdfBase64: string,
+    phoneNumber: number,
+    message: string
+  ): Promise<void> {
     await this.client.sendMessage(
-      await this.createChatId.createIdByNumber(
-        soldCart.getCustomer().getPhoneNumber()
-      ),
-      await this.messageBill.getFileMedia(soldCart),
+      await this.createChatId.createIdByNumber(phoneNumber),
+      await this.messageBill.getFileMedia(pdfBase64),
       {
         caption: message,
       }

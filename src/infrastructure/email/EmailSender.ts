@@ -1,20 +1,14 @@
-import IBillGenerator from "../../domain/interfaces/application/IBillGenerator";
 import IEmailSender from "../../domain/interfaces/infrastructure/email/IEmailSender";
 import ISMTPConnection from "../../domain/interfaces/infrastructure/email/ISMTPConnection";
-import RSoldCart from "../repository/retriever/RSoldCart";
 
 export default class EmailSender implements IEmailSender {
-  constructor(
-    private readonly smtpConnection: ISMTPConnection,
-    private readonly rSoldCart: RSoldCart,
-    private readonly billGenerator: IBillGenerator
-  ) {}
+  constructor(private readonly smtpConnection: ISMTPConnection) {}
 
-  async sendEmail(soldCartId: number, message: string): Promise<boolean> {
-    const soldCart = await this.rSoldCart.getSoldCart(soldCartId);
-    const email = soldCart.getCustomer().getEmail();
-    const pdfBase64 = await this.billGenerator.getElectronicBill(soldCartId);
-
+  async sendEmail(
+    email: string,
+    pdfBase64: string,
+    message: string
+  ): Promise<boolean> {
     const mailOptions = {
       from: "MicroTech <billing@microtech.com>",
       to: email,
