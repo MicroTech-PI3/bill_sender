@@ -1,21 +1,39 @@
 import IBillGenerator from "../domain/interfaces/application/IBillGenerator";
+import IBillManager from "../domain/interfaces/application/IBillManager";
 import IRSoldCart from "../domain/interfaces/infrastructure/IRSoldCart";
 import SoldCart from "../domain/model/soldCart/SoldCart";
 import EmailSender from "../infrastructure/email/EmailSender";
 import WhatsApp from "../infrastructure/whatsapp/WhatsApp";
 
-export default class BillManager {
+export default class BillManager implements IBillManager {
   constructor(
     private readonly whatsapp: WhatsApp,
     private readonly emailSender: EmailSender,
     private readonly rSoldCart: IRSoldCart,
-    private readonly sendingVia: ISendingVia,
     private readonly billGenerator: IBillGenerator
   ) {}
 
-  async sendBill(soldCartId: number): Promise<void> {
-    const soldCart = await this.rSoldCart.getSoldCart(soldCartId);
-    const pdfBase64 = await this.billGenerator.getElectronicBill(soldCart);
+  async sendBill(soldCartId: number): Promise<boolean> {
+    try {
+      const soldCart = await this.rSoldCart.getSoldCart(soldCartId);
+      const pdfBase64 = await this.billGenerator.getElectronicBill(soldCart);
+      const sendingVia = soldCart.getCustomer().getBillVia();
+
+      if (sendingVia === "W") {
+        await this.sendToWhatsApp(soldCart, pdfBase64);
+        return true;
+      } else if (sendingVia === "E") {
+        await this.sendToEmail(soldCart, pdfBase64);
+        return true;
+      } else if (sendingVia === "WE") {
+        await this.sendToWhatsApp(soldCart, pdfBase64);
+        await this.sendToEmail(soldCart, pdfBase64);
+        return true;
+      }
+      return false;
+    } catch (error) {
+      return false;
+    }
   }
 
   private async sendToWhatsApp(
@@ -38,9 +56,5 @@ export default class BillManager {
       pdfBase64,
       "Esta es la factura por tu compra!"
     );
-  }
-
-  async setBillSendingVia(sendingVia: ISendingVia): Promise<void> {
-    this.sendingVia = sendingVia;
   }
 }
