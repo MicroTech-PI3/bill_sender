@@ -1,3 +1,5 @@
+import SoldCart from "../../model/soldCart/SoldCart";
+
 export default interface IBillGenerator {
-  getElectronicBill(soldCartId: number): Promise<string>;
+  getElectronicBill(soldCart: SoldCart): Promise<string>;
 }
