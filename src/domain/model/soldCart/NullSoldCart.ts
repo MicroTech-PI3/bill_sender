@@ -1,26 +1,35 @@
-import Cart from "../cart/Cart";
-import NullCart from "../cart/NullCart";
-import Time from "../time/Time";
+import NullCustomer from "../customer/NullCustomer";
+import Employee from "../employee/Employee";
+import NullEmployee from "../employee/NullEmployee";
+import PurchaseItem from "../purchaseItem/PurchaseItem";
 import AbstractSoldCart from "./AbstractSoldCart";
 
 export default class NullSoldCart extends AbstractSoldCart {
   constructor() {
-    super(new NullCart(), new Time("00:00:00"), new Date(), -1);
+    super(new Date(), -1, new NullEmployee(), [], new NullCustomer());
   }
 
   public isNull(): boolean {
     return true;
   }
 
-  public setCart(cart: Cart) {
-    return;
-  }
-
-  public setTime(time: Time) {
-    return;
-  }
-
   public setDate(date: Date) {
+    return;
+  }
+
+  public setId(id: number) {
+    return;
+  }
+
+  public setEmployee(employee: Employee) {
+    return;
+  }
+
+  public setProducts(products: PurchaseItem[]) {
+    return;
+  }
+
+  public setCustomer(customer: NullCustomer) {
     return;
   }
 }

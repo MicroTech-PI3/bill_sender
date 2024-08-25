@@ -1,21 +1,15 @@
-import Cart from "../cart/Cart";
-import Time from "../time/Time";
+import Customer from "../customer/Customer";
+import Employee from "../employee/Employee";
+import PurchaseItem from "../purchaseItem/PurchaseItem";
 
 export default abstract class AbstractSoldCart {
   constructor(
-    protected cart: Cart,
-    protected time: Time,
     protected date: Date,
-    protected id: number
+    protected id: number,
+    protected employee: Employee,
+    protected products: PurchaseItem[],
+    protected customer: Customer
   ) {}
-
-  public getCart() {
-    return this.cart;
-  }
-
-  public getTime() {
-    return this.time;
-  }
 
   public getDate() {
     return this.date;
@@ -25,12 +19,16 @@ export default abstract class AbstractSoldCart {
     return this.id;
   }
 
-  public setCart(cart: Cart) {
-    this.cart = cart;
+  public getEmployee() {
+    return this.employee;
   }
 
-  public setTime(time: Time) {
-    this.time = time;
+  public getProducts() {
+    return this.products;
+  }
+
+  public getCustomer() {
+    return this.customer;
   }
 
   public setDate(date: Date) {
@@ -39,6 +37,18 @@ export default abstract class AbstractSoldCart {
 
   public setId(id: number) {
     this.id = id;
+  }
+
+  public setEmployee(employee: Employee) {
+    this.employee = employee;
+  }
+
+  public setProducts(products: PurchaseItem[]) {
+    this.products = products;
+  }
+
+  public setCustomer(customer: Customer) {
+    this.customer = customer;
   }
 
   public abstract isNull(): boolean;
