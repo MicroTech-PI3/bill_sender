@@ -1,16 +1,16 @@
 {
   "name": "swf-app",
   "version": "1.0.0",
-  "description": "Swf-app",
-  "main": "./build/swf-app.js",
+  "description": "Bill_App",
+  "main": "./build/bill-app.js",
   "scripts": {
-    "dev": "ts-node-dev --env-file=env/.development.env src/cacupb-app.ts",
+    "dev": "ts-node-dev --env-file=env/.development.env src/bill-app.ts",
     "build": "rm -rf ./build && tsc",
-    "start": "node --env-file=env/.production.env build/cacupb-app.js",
+    "start": "node --env-file=env/.production.env build/bill-app.js",
     "test": "jest --verbose"
   },
   "keywords": [
-    "swf-app"
+    "bill-app"
   ],
   "author": "David Santiago Cárdenas Rivera",
   "license": "ISC",

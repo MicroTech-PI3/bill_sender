@@ -14,7 +14,7 @@ export default class PurchaseItemProvider implements IProvider<PurchaseItem> {
     return new Promise((resolve, reject) => {
       this.mySqlDBC
         .query<DBISoldItemsProduct>(
-          `SELECT * FROM SOLD_ITEMS_has_PRODUCT WHERE ID = ${id}`
+          `SELECT * FROM SOLD_ITEMS_has_PRODUCT WHERE SOLD_ITEMS_ID = ${id}`
         )
         .then(async (result) => {
           if (result.length === 0) {

@@ -18,7 +18,8 @@ export default class CustomerProvider implements IProvider<Customer> {
                 customer.LASTNAME,
                 customer.PHONE,
                 customer.EMAIL,
-                customer.ID
+                customer.ID,
+                customer.BILL_VIA
               );
             })
           );
@@ -44,7 +45,8 @@ export default class CustomerProvider implements IProvider<Customer> {
               customer.LASTNAME,
               customer.PHONE,
               customer.EMAIL,
-              customer.ID
+              customer.ID,
+              customer.BILL_VIA
             )
           );
         });

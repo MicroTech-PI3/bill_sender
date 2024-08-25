@@ -29,11 +29,11 @@ export default class BillFactory {
     //MySQL
     const databaseEnvironment = new DatabaseEnvironment();
     const mySqlConnectionConfig: MySqlConnectionConfig = {
-      host: databaseEnvironment.HOST,
-      user: databaseEnvironment.USER,
-      password: databaseEnvironment.PASSWORD,
+      host: databaseEnvironment.DB_HOST,
+      user: databaseEnvironment.DB_USER,
+      password: databaseEnvironment.DB_PASSWORD,
       database: databaseEnvironment.DATABASE,
-      port: databaseEnvironment.PORT,
+      port: databaseEnvironment.DB_PORT,
     };
     const mySqlDbc = new MySqlDBC(mySqlConnectionConfig);
 

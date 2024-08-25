@@ -16,7 +16,7 @@ export default class MySqlDBC {
   }
 
   async query<T>(sql: string, values?: any[]): Promise<T[]> {
-    let connection: PoolConnection;
+    let connection: PoolConnection | null = null;
     try {
       connection = await this.pool.getConnection();
       const [rows, _fields] = await connection.execute<
@@ -31,6 +31,8 @@ export default class MySqlDBC {
     } catch (error) {
       console.error("Error executing query", error);
       throw error;
+    } finally {
+      if (connection) connection.release(); // Ensure the connection is released
     }
   }
 
