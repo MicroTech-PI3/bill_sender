@@ -52,6 +52,7 @@
     "@types/express": "^4.17.21",
     "@types/jest": "^29.5.12",
     "@types/morgan": "^1.9.9",
+    "@types/pdfmake": "^0.2.9",
     "eslint": "^8.57.0",
     "eslint-config-lover": "^2.1.0",
     "eslint-plugin-hexagonal-architecture": "^1.0.3",
