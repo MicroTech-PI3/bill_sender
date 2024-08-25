@@ -1,3 +1,3 @@
 export default interface IBillGenerator {
-  getElectronicBill(soldCartId: number): Promise<void>;
+  getElectronicBill(soldCartId: number): Promise<string>;
 }

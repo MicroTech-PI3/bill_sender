@@ -1,9 +1,8 @@
 import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 import SoldCart from "../domain/model/soldCart/SoldCart";
-import fs from "fs";
 
 export default class PDFCreator {
-  private async createPDF(soldCart: SoldCart): Promise<Uint8Array> {
+  public async createPDF(soldCart: SoldCart): Promise<Uint8Array> {
     const pdfDoc = await PDFDocument.create();
     const page = pdfDoc.addPage([600, 400]);
     const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
