@@ -4,4 +4,5 @@ export default interface DBICustomer {
   LASTNAME: string;
   PHONE: number;
   EMAIL: string;
+  BILL_VIA: string;
 }
