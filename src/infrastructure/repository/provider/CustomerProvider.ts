@@ -1,4 +1,4 @@
-import IProvider from "../../../domain/interfaces/infrastructure/provider/IProvider";
+import IProvider from "../../../domain/interfaces/infrastructure/repository/provider/IProvider";
 import Customer from "../../../domain/model/customer/Customer";
 import DBICustomer from "../../../domain/model/database/DBICustomer";
 import MySqlDBC from "../../../util/database/MySqlDBC";

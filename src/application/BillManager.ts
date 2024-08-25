@@ -1,6 +1,6 @@
 import IBillGenerator from "../domain/interfaces/application/IBillGenerator";
 import IBillManager from "../domain/interfaces/application/IBillManager";
-import IRSoldCart from "../domain/interfaces/infrastructure/IRSoldCart";
+import ISoldCartRetriever from "../domain/interfaces/infrastructure/repository/retriever/ISoldCartRetriever";
 import SoldCart from "../domain/model/soldCart/SoldCart";
 import EmailSender from "../infrastructure/email/EmailSender";
 import WhatsApp from "../infrastructure/whatsapp/WhatsApp";
@@ -9,7 +9,7 @@ export default class BillManager implements IBillManager {
   constructor(
     private readonly whatsapp: WhatsApp,
     private readonly emailSender: EmailSender,
-    private readonly rSoldCart: IRSoldCart,
+    private readonly rSoldCart: ISoldCartRetriever,
     private readonly billGenerator: IBillGenerator
   ) {}
 

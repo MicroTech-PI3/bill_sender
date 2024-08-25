@@ -1,4 +1,4 @@
-import IProvider from "../../../domain/interfaces/infrastructure/provider/IProvider";
+import IProvider from "../../../domain/interfaces/infrastructure/repository/provider/IProvider";
 import DBIProduct from "../../../domain/model/database/DBIProduct";
 import Product from "../../../domain/model/product/Product";
 import MySqlDBC from "../../../util/database/MySqlDBC";

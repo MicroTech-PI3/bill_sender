@@ -1,4 +1,4 @@
-import IProvider from "../../../domain/interfaces/infrastructure/provider/IProvider";
+import IProvider from "../../../domain/interfaces/infrastructure/repository/provider/IProvider";
 import DBISoldItems from "../../../domain/model/database/DBISoldItems";
 import SoldCart from "../../../domain/model/soldCart/SoldCart";
 import MySqlDBC from "../../../util/database/MySqlDBC";

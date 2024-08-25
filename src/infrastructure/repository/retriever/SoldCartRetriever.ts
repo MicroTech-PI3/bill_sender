@@ -1,8 +1,8 @@
-import IRSoldCart from "../../../domain/interfaces/infrastructure/IRSoldCart";
+import ISoldCartRetriever from "../../../domain/interfaces/infrastructure/repository/retriever/ISoldCartRetriever";
 import SoldCart from "../../../domain/model/soldCart/SoldCart";
 import SoldCartProvider from "../provider/SoldCartProvider";
 
-export default class RSoldCart implements IRSoldCart {
+export default class SoldCartRetriever implements ISoldCartRetriever {
   constructor(private readonly soldCartProvider: SoldCartProvider) {}
 
   async getSoldCart(id: number): Promise<SoldCart> {
