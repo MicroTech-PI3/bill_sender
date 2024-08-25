@@ -6,7 +6,7 @@ import CustomerProvider from "./CustomerProvider";
 import EmployeeProvider from "./EmployeeProvider";
 import PurchaseItemProvider from "./PurchaseItemProvider";
 
-export default class CartProvider implements IProvider<SoldCart> {
+export default class SoldCartProvider implements IProvider<SoldCart> {
   constructor(
     private readonly mySqlDBC: MySqlDBC,
     private readonly purchaseItemProvider: PurchaseItemProvider,
@@ -36,7 +36,7 @@ export default class CartProvider implements IProvider<SoldCart> {
       }
       return soldCarts;
     } catch (error) {
-      throw new Error("Error while trying to find products");
+      throw new Error("Error while trying to find the sold carts");
     }
   }
 
