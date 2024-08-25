@@ -1,4 +1,4 @@
-import IRSoldCart from "../../../domain/interfaces/driven/IRSoldCart";
+import IRSoldCart from "../../../domain/interfaces/infrastructure/IRSoldCart";
 import SoldCart from "../../../domain/model/soldCart/SoldCart";
 import SoldCartProvider from "../provider/SoldCartProvider";
 

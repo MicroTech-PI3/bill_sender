@@ -1,5 +1,5 @@
-import IBillGenerator from "../domain/interfaces/driven/application/IBillGenerator";
-import IRSoldCart from "../domain/interfaces/driven/IRSoldCart";
+import IBillGenerator from "../domain/interfaces/application/IBillGenerator";
+import IRSoldCart from "../domain/interfaces/infrastructure/IRSoldCart";
 import PDFCreator from "../helper/PDFCreator";
 
 export default class BillGenerator implements IBillGenerator {

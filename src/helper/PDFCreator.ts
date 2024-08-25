@@ -189,7 +189,7 @@ export default class PDFCreator {
     drawTableRow(
       currentPage,
       yPosition,
-      ["Descripción", "Cantidad", "Precio unidad", "Importe"],
+      ["Producto", "Cantidad", "Precio unidad", "Importe"],
       true
     );
     yPosition -= tableLineHeight;
@@ -204,7 +204,7 @@ export default class PDFCreator {
         drawTableRow(
           currentPage,
           yPosition,
-          ["Descripción", "Cantidad", "Precio unidad", "Importe"],
+          ["Producto", "Cantidad", "Precio unidad", "Importe"],
           true
         );
         yPosition -= tableLineHeight;

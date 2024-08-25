@@ -42,7 +42,9 @@
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "mysql2": "^3.11.0",
-    "pdf-lib": "^1.17.1"
+    "pdf-lib": "^1.17.1",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.25.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.2.0",
@@ -53,6 +55,7 @@
     "@types/jest": "^29.5.12",
     "@types/morgan": "^1.9.9",
     "@types/pdfmake": "^0.2.9",
+    "@types/qrcode-terminal": "^0.12.2",
     "eslint": "^8.57.0",
     "eslint-config-lover": "^2.1.0",
     "eslint-plugin-hexagonal-architecture": "^1.0.3",
