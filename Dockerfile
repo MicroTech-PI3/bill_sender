@@ -9,7 +9,11 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+RUN npm run build \
+    && sudo apt update \
+    && sudo apt install -y --no-cache chromium \
+    && sudo apt install -y chromium-browser \
+    && sudo apt-get clean
 
 EXPOSE 3000
 
