@@ -25,8 +25,8 @@ RUN apt-get update -y \
     xdg-utils \
     libnss3 \
     && apt-get clean \
-    && wget https://dl.google.com/linux/direct/google-chrome-stable_current_arm64.deb \
-    && dpkg -i google-chrome-stable_current_arm64.deb; apt-get -fy install \
+    && wget https://launchpad.net/~chromium-team/+archive/ubuntu/stable/+build/20237411/+files/chromium-browser_94.0.4606.81-0ubuntu0.18.04.1_arm64.deb \
+    && apt-get install -y ./chromium-browser_94.0.4606.81-0ubuntu0.18.04.1_arm64.deb \
     && npm install
 
 COPY . .
