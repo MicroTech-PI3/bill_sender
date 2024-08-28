@@ -1,18 +1,6 @@
 services:
-  mariadb:
-    image: lexabernal/db_microtech:arm64
-    environment:
-      - MARIADB_ROOT_PASSWORD=my-password
-      - MARIADB_DATABASE=my-database
-      - MARIADB_USER=my-user
-      - MARIADB_PASSWORD=my-user-password
-    volumes:
-      - mariadb-data:/var/lib/mysql
-    ports:
-      - "3307:3306"
-
   billsender:
-    image: lexabernal/bill_sender:arm64
+    image: bill_sender:arm64
     environment:
       - PORT=3000
       - HOST=microtech.icu

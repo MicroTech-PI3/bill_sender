@@ -7,7 +7,7 @@ WORKDIR /home/app
 COPY ["package.json", "package-lock.json*", "./"]
 
 RUN apt update \
-    && apt install -y --no-install-recommends firefox \
+    && apt install -y --no-install-recommends firefox-esr \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && npm install
