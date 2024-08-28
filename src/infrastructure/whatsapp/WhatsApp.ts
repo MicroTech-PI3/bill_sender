@@ -11,8 +11,9 @@ export default class WhatsApp {
   ) {
     this.client = new Client({
       puppeteer: {
-        executablePath: "/usr/bin/google-chrome",
-        args: ["--no-sandbox", "--disable-gpu"],
+        executablePath: "/usr/bin/firefox",
+        args: ["--no-sandbox"],
+        headless: true,
       },
       authStrategy: new LocalAuth({ dataPath: "sessions" }),
     });
