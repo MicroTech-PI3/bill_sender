@@ -6,7 +6,10 @@ WORKDIR /home/app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
-RUN npm install
+RUN apt-get update -y \
+    && apt-get install -y chromium \
+    && apt-get clean \
+    && npm install
 
 COPY . .
 
