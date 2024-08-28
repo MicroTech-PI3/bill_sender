@@ -25,9 +25,9 @@ RUN apt-get update -y \
     xdg-utils \
     libnss3 \
     && apt-get clean \
-    && npm install \
     && wget https://dl.google.com/linux/direct/google-chrome-stable_current_arm64.deb \
-    && dpkg -i google-chrome-stable_current_arm64.deb; apt-get -fy install
+    && dpkg -i google-chrome-stable_current_arm64.deb; apt-get -fy install \
+    && npm install
 
 COPY . .
 
