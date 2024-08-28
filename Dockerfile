@@ -9,7 +9,8 @@ COPY ["package.json", "package-lock.json*", "./"]
 RUN apt update \
     && apt install -y chromium \
     && apt-get clean \
-    && npm install
+    && npm install\
+    && node node_modules/puppeteer/install.js
 
 COPY . .
 
