@@ -7,10 +7,9 @@ WORKDIR /home/app
 COPY ["package.json", "package-lock.json*", "./"]
 
 RUN apt update \
-    && apt install -y chromium \
+    && apt install -y chromium-browser \
     && apt-get clean \
-    && npm install\
-    && node node_modules/puppeteer/install.js
+    && npm install
 
 COPY . .
 
