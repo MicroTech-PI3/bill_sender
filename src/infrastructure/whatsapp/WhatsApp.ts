@@ -10,6 +10,10 @@ export default class WhatsApp {
     private readonly messageBill: IMessageBill
   ) {
     this.client = new Client({
+      puppeteer: {
+        headless: true,
+        args: ["--no-sandbox"],
+      },
       authStrategy: new LocalAuth({ dataPath: "sessions" }),
     });
 

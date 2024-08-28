@@ -27,19 +27,3 @@ services:
       - DATABASE=MICROTECH
     ports:
       - "8888:3000"
-
-  backfacturacion:
-    image: lexabernal/back_facturacion:arm64
-    environment:
-      - APP_PORT=3000
-      - DB_HOST=mariadb
-      - DB_PORT=3307
-      - DB_USER=root
-      - DB_PASSWORD=my-password
-      - DB_DATABASE=MICROTECH
-      - HOST=microtech.icu
-    ports:
-      - "6969:3000"
-
-volumes:
-  mariadb-data:
