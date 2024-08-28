@@ -1,6 +1,6 @@
 services:
   billsender:
-    image: bill_sender:arm64
+    image: lexabernal/bill_sender:arm64
     environment:
       - PORT=3000
       - HOST=microtech.icu
