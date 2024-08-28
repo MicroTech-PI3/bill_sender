@@ -16,7 +16,7 @@ export default class NullEmployee
     return this.address;
   }
 
-  public setAddress(address: string) {
+  public setAddress() {
     return;
   }
 }

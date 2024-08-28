@@ -29,7 +29,7 @@ export default class Express {
       this.app.use(router.path, router.router);
     });
 
-    this.app.use((req, res) => {
+    this.app.use((_req, res) => {
       res.status(404).send("404 Not Found");
     });
   };

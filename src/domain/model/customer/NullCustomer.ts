@@ -16,7 +16,7 @@ export default class NullCustomer
     return this.billVia;
   }
 
-  public setBillVia(billVia: string): void {
+  public setBillVia(): void {
     return;
   }
 }

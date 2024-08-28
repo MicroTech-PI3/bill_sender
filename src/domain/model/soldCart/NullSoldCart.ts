@@ -1,7 +1,5 @@
 import NullCustomer from "../customer/NullCustomer";
-import Employee from "../employee/Employee";
 import NullEmployee from "../employee/NullEmployee";
-import PurchaseItem from "../purchaseItem/PurchaseItem";
 import AbstractSoldCart from "./AbstractSoldCart";
 
 export default class NullSoldCart extends AbstractSoldCart {
@@ -13,23 +11,23 @@ export default class NullSoldCart extends AbstractSoldCart {
     return true;
   }
 
-  public setDate(date: Date) {
+  public setDate() {
     return;
   }
 
-  public setId(id: number) {
+  public setId() {
     return;
   }
 
-  public setEmployee(employee: Employee) {
+  public setEmployee() {
     return;
   }
 
-  public setProducts(products: PurchaseItem[]) {
+  public setProducts() {
     return;
   }
 
-  public setCustomer(customer: NullCustomer) {
+  public setCustomer() {
     return;
   }
 }

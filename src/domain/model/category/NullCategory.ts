@@ -9,15 +9,15 @@ export default class NullCategory extends AbstractCategory {
     return true;
   }
 
-  public setName(name: string) {
+  public setName() {
     return;
   }
 
-  public setDescription(description: string) {
+  public setDescription() {
     return;
   }
 
-  public setId(id: number) {
+  public setId() {
     return;
   }
 }

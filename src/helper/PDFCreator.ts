@@ -194,7 +194,7 @@ export default class PDFCreator {
     );
     yPosition -= tableLineHeight;
 
-    soldCart.getProducts().forEach((product, index) => {
+    soldCart.getProducts().forEach((product, _index) => {
       if (yPosition < 50) {
         // Add new page if there is no more space
         currentPage = pdfDoc.addPage([600, 400]);

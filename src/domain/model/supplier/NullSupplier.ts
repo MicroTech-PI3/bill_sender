@@ -22,11 +22,11 @@ export default class NullSupplier
     return this.brand;
   }
 
-  public setCity(city: string) {
+  public setCity() {
     return;
   }
 
-  public setBrand(brand: string): void {
+  public setBrand(): void {
     return;
   }
 }

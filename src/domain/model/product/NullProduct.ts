@@ -1,6 +1,5 @@
 import NullCategory from "../category/NullCategory";
 import NullSupplier from "../supplier/NullSupplier";
-import Supplier from "../supplier/Supplier";
 import AbstractProduct from "./AbstractProduct";
 
 export default class NullProduct extends AbstractProduct {
@@ -16,23 +15,23 @@ export default class NullProduct extends AbstractProduct {
     );
   }
 
-  public setName(name: string) {
+  public setName() {
     return;
   }
 
-  public setPrice(price: number) {
+  public setPrice() {
     return;
   }
 
-  public setDescription(description: string) {
+  public setDescription() {
     return;
   }
 
-  public setQuantity(quantity: number) {
+  public setQuantity() {
     return;
   }
 
-  public setSupplier(supplier: Supplier) {
+  public setSupplier() {
     return;
   }
 
