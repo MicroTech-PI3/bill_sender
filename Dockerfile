@@ -46,7 +46,8 @@ RUN apt-get update \
     libnss3 \
     lsb-release \
     xdg-utils \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install
 
 COPY . .
 
