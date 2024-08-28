@@ -23,12 +23,11 @@ export default class BillManager implements IBillManager {
         await this.sendToWhatsApp(soldCart, pdfBase64);
         return true;
       } else if (sendingVia === "E") {
-        await this.sendToEmail(soldCart, pdfBase64);
-        return true;
+        console.log("Sending via email");
+        return await this.sendToEmail(soldCart, pdfBase64);
       } else if (sendingVia === "WE") {
         await this.sendToWhatsApp(soldCart, pdfBase64);
-        await this.sendToEmail(soldCart, pdfBase64);
-        return true;
+        return await this.sendToEmail(soldCart, pdfBase64);
       }
       return false;
     } catch (error) {
@@ -50,8 +49,8 @@ export default class BillManager implements IBillManager {
   private async sendToEmail(
     soldCart: SoldCart,
     pdfBase64: string
-  ): Promise<void> {
-    await this.emailSender.sendEmail(
+  ): Promise<boolean> {
+    return await this.emailSender.sendEmail(
       soldCart.getCustomer().getEmail(),
       pdfBase64,
       "Esta es la factura por tu compra!"

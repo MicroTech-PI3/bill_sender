@@ -10,7 +10,7 @@ export default class EmailSender implements IEmailSender {
     message: string
   ): Promise<boolean> {
     const mailOptions = {
-      from: "MicroTech <billing@microtech.com>",
+      from: "Facturas MicroTech<billing@microtech.icu>",
       to: email,
       subject: "¡Esta es la factura por tu compra! 🛒",
       text: message,
@@ -23,16 +23,16 @@ export default class EmailSender implements IEmailSender {
         },
       ],
     };
-
-    this.smtpConnection
-      .getSmtpConnection()
-      .sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return false;
-        }
-        return true;
-      });
-
-    return false;
+    console.log("Sending email...");
+    try {
+      const data = await this.smtpConnection
+        .getSmtpConnection()
+        .sendMail(mailOptions);
+      console.log("Email sent: ", data);
+      return true;
+    } catch (error) {
+      console.error("Error sending email: ", error);
+      return false;
+    }
   }
 }
