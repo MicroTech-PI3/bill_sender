@@ -11,7 +11,8 @@ export default class WhatsApp {
   ) {
     this.client = new Client({
       puppeteer: {
-        executablePath: "/usr/bin/firefox",
+        product: "firefox",
+        executablePath: "/usr/bin/firefox-esr",
         args: ["--no-sandbox"],
         headless: true,
       },

@@ -6,6 +6,8 @@ WORKDIR /home/app
 
 COPY ["package.json", "package-lock.json*", "./"]
 
+ENV PUPPETEER_SKIP_DOWNLOAD=true
+
 RUN apt update \
     && apt install -y --no-install-recommends firefox-esr \
     && apt-get clean \
