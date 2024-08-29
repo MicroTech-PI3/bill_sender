@@ -35,7 +35,7 @@ export default class Express {
   };
 
   start = (): void => {
-    this.app.listen(this.env.PORT, () => {
+    this.app.listen(this.env.PORT, "0.0.0.0", () => {
       console.log(`Server is running on ${this.env.HOST}:${this.env.PORT}`);
     });
   };
